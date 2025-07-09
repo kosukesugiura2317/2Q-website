@@ -12,29 +12,29 @@
         }
 
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f39c12;
-            --success-color: #27ae60;
-            --danger-color: #e74c3c;
+            --primary-color: #000000;
+            --secondary-color: #ff0000;
+            --success-color: #000000;
+            --danger-color: #ff0000;
             --background-color: #ffffff;
-            --surface-color: #f8f9fa;
-            --text-color: #333333;
-            --border-color: #dee2e6;
+            --surface-color: #f8f8f8;
+            --text-color: #000000;
+            --border-color: #000000;
             --shadow-color: rgba(0, 0, 0, 0.1);
             --card-shadow: 0 2px 10px var(--shadow-color);
             --transition: all 0.3s ease;
         }
 
         [data-theme="dark"] {
-            --primary-color: #64b5f6;
-            --secondary-color: #ffb74d;
-            --success-color: #66bb6a;
-            --danger-color: #ef5350;
-            --background-color: #1a1a1a;
-            --surface-color: #2d2d2d;
+            --primary-color: #ffffff;
+            --secondary-color: #ff0000;
+            --success-color: #ffffff;
+            --danger-color: #ff0000;
+            --background-color: #000000;
+            --surface-color: #1a1a1a;
             --text-color: #ffffff;
-            --border-color: #404040;
-            --shadow-color: rgba(0, 0, 0, 0.3);
+            --border-color: #ffffff;
+            --shadow-color: rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -55,48 +55,67 @@
             text-align: center;
             margin-bottom: 30px;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 12px;
         }
 
         .header h1 {
+            flex: 1;
+            text-align: left;
+            margin-bottom: 0;
             font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-color);
         }
 
         .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: static;
+            margin: 0;
             background: var(--surface-color);
             border: 2px solid var(--border-color);
-            border-radius: 50px;
             padding: 10px 20px;
             cursor: pointer;
             transition: var(--transition);
             font-size: 1rem;
+            color: var(--text-color);
         }
 
         .theme-toggle:hover {
             background: var(--primary-color);
-            color: white;
+            color: var(--background-color);
+            transform: scale(1.05);
+        }
+
+        .language-toggle {
+            position: static;
+            margin: 0;
+            background: var(--surface-color);
+            border: 2px solid var(--border-color);
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .language-toggle:hover {
+            background: var(--primary-color);
+            color: var(--background-color);
             transform: scale(1.05);
         }
 
         .sleep-section {
             background: var(--surface-color);
-            border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
         }
 
         .sleep-section h2 {
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--text-color);
             font-size: 1.5rem;
         }
 
@@ -118,59 +137,29 @@
             color: var(--text-color);
         }
 
-        .input-group input {
+        .input-group input, .input-group select {
             padding: 12px;
             border: 2px solid var(--border-color);
-            border-radius: 8px;
             background: var(--background-color);
             color: var(--text-color);
             font-size: 1rem;
             transition: var(--transition);
         }
 
-        .input-group input:focus {
+        .input-group input:focus, .input-group select:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-        }
-
-        .timer-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .timer-section h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .countdown {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .timer-controls {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.1);
         }
 
         .sleep-countdown-section {
-            background: linear-gradient(135deg, #9b59b6, #8e44ad);
-            color: white;
-            border-radius: 15px;
+            background: var(--surface-color);
+            color: var(--text-color);
             padding: 25px;
             text-align: center;
             margin-bottom: 20px;
             box-shadow: var(--card-shadow);
+            border: 2px solid var(--border-color);
         }
 
         .sleep-countdown-section h3 {
@@ -182,17 +171,17 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: var(--secondary-color);
         }
 
         .study-timer-section {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-radius: 15px;
+            background: var(--surface-color);
+            color: var(--text-color);
             padding: 25px;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: var(--card-shadow);
+            border: 2px solid var(--border-color);
         }
 
         .study-timer-section h3 {
@@ -204,13 +193,21 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: var(--secondary-color);
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         .btn {
             padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            background: var(--background-color);
+            color: var(--text-color);
             cursor: pointer;
             font-size: 1rem;
             font-weight: 600;
@@ -221,60 +218,68 @@
 
         .btn-primary {
             background: var(--primary-color);
-            color: white;
+            color: var(--background-color);
+            border-color: var(--primary-color);
         }
 
         .btn-primary:hover {
-            background: #357abd;
+            background: var(--background-color);
+            color: var(--primary-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn-secondary {
-            background: var(--secondary-color);
-            color: white;
+            background: var(--surface-color);
+            color: var(--text-color);
+            border-color: var(--border-color);
         }
 
         .btn-secondary:hover {
-            background: #e67e22;
+            background: var(--primary-color);
+            color: var(--background-color);
+            border-color: var(--primary-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn-success {
-            background: var(--success-color);
-            color: white;
+            background: var(--primary-color);
+            color: var(--background-color);
+            border-color: var(--primary-color);
         }
 
         .btn-success:hover {
-            background: #229954;
+            background: var(--background-color);
+            color: var(--primary-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .btn-danger {
-            background: var(--danger-color);
-            color: white;
+            background: var(--secondary-color);
+            color: var(--background-color);
+            border-color: var(--secondary-color);
         }
 
         .btn-danger:hover {
-            background: #c0392b;
+            background: var(--background-color);
+            color: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
         }
 
         .todo-form {
             background: var(--surface-color);
-            border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
         }
 
         .todo-form h2 {
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--text-color);
             font-size: 1.5rem;
         }
 
@@ -287,15 +292,14 @@
 
         .todo-list {
             background: var(--surface-color);
-            border-radius: 15px;
             padding: 25px;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
         }
 
         .todo-list h2 {
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: var(--text-color);
             font-size: 1.5rem;
         }
 
@@ -311,7 +315,6 @@
             border: 2px solid var(--border-color);
             background: var(--background-color);
             color: var(--text-color);
-            border-radius: 20px;
             cursor: pointer;
             transition: var(--transition);
             font-size: 0.9rem;
@@ -319,20 +322,19 @@
 
         .filter-btn.active {
             background: var(--primary-color);
-            color: white;
+            color: var(--background-color);
             border-color: var(--primary-color);
         }
 
         .filter-btn:hover {
             background: var(--primary-color);
-            color: white;
+            color: var(--background-color);
             border-color: var(--primary-color);
         }
 
         .todo-item {
             background: var(--background-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border: 2px solid var(--border-color);
             padding: 20px;
             margin-bottom: 15px;
             transition: var(--transition);
@@ -379,9 +381,8 @@
         .todo-subject {
             display: inline-block;
             background: var(--primary-color);
-            color: white;
+            color: var(--background-color);
             padding: 4px 12px;
-            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 10px;
@@ -419,7 +420,6 @@
 
         .status-badge {
             padding: 6px 12px;
-            border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -427,26 +427,25 @@
 
         .status-pending {
             background: var(--secondary-color);
-            color: white;
+            color: var(--background-color);
         }
 
         .status-completed {
-            background: var(--success-color);
-            color: white;
+            background: var(--primary-color);
+            color: var(--background-color);
         }
 
         .progress-bar {
             width: 100%;
             height: 8px;
             background: var(--border-color);
-            border-radius: 4px;
             overflow: hidden;
             margin-top: 10px;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            background: var(--secondary-color);
             transition: width 0.3s ease;
         }
 
@@ -459,11 +458,10 @@
 
         .stat-card {
             background: var(--surface-color);
-            border-radius: 12px;
             padding: 20px;
             text-align: center;
             box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             transition: var(--transition);
         }
 
@@ -475,7 +473,7 @@
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-bottom: 5px;
         }
 
@@ -634,46 +632,49 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 勉強Todoアプリ</h1>
+            <h1 id="app-title">勉強Todoアプリ</h1>
+            <button class="language-toggle" onclick="toggleLanguage()">
+                <span id="language-icon">EN</span> 言語切替
+            </button>
             <button class="theme-toggle" onclick="toggleTheme()">
-                <span id="theme-icon">🌙</span> テーマ切替
+                <span id="theme-icon">DARK</span> テーマ切替
             </button>
         </div>
 
         <!-- 睡眠時間管理セクション -->
         <div class="sleep-section">
-            <h2>😴 睡眠時間管理</h2>
+            <h2 id="sleep-management-title">睡眠時間管理</h2>
             <div class="sleep-inputs">
                 <div class="input-group">
-                    <label for="bedtime">就寝時間</label>
+                    <label for="bedtime" id="bedtime-label">就寝時間</label>
                     <input type="time" id="bedtime" value="23:00">
                 </div>
                 <div class="input-group">
-                    <label for="wakeup">起床時間</label>
+                    <label for="wakeup" id="wakeup-label">起床時間</label>
                     <input type="time" id="wakeup" value="07:00">
                 </div>
                 <div class="input-group">
-                    <label for="target-sleep">目標睡眠時間（時間）</label>
+                    <label for="target-sleep" id="target-sleep-label">目標睡眠時間（時間）</label>
                     <input type="number" id="target-sleep" value="8" min="1" max="12" step="0.5">
                 </div>
             </div>
-            <button class="btn btn-primary" onclick="saveSleepSettings()">睡眠設定を保存</button>
+            <button class="btn btn-primary" onclick="saveSleepSettings()" id="save-sleep-btn">睡眠設定を保存</button>
         </div>
 
         <!-- 睡眠カウントダウン -->
         <div class="sleep-countdown-section">
-            <h3>😴 今日寝るまであと</h3>
+            <h3 id="sleep-countdown-title">今日寝るまであと</h3>
             <div class="sleep-countdown" id="sleep-countdown">00:00:00</div>
         </div>
 
         <!-- 勉強タイマー -->
         <div class="study-timer-section">
-            <h3>⏰ 今日の勉強時間</h3>
+            <h3 id="study-timer-title">今日の勉強時間</h3>
             <div class="study-timer" id="study-timer">00:00:00</div>
             <div class="timer-controls">
-                <button class="btn btn-primary" onclick="startTimer()">タイマー開始</button>
-                <button class="btn btn-secondary" onclick="pauseTimer()">一時停止</button>
-                <button class="btn btn-danger" onclick="resetTimer()">リセット</button>
+                <button class="btn btn-primary" onclick="startTimer()" id="start-timer-btn">タイマー開始</button>
+                <button class="btn btn-secondary" onclick="pauseTimer()" id="pause-timer-btn">一時停止</button>
+                <button class="btn btn-danger" onclick="resetTimer()" id="reset-timer-btn">リセット</button>
             </div>
         </div>
 
@@ -681,32 +682,32 @@
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-number" id="total-tasks">0</div>
-                <div class="stat-label">総タスク数</div>
+                <div class="stat-label" id="total-tasks-label">総タスク数</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="completed-tasks">0</div>
-                <div class="stat-label">完了タスク</div>
+                <div class="stat-label" id="completed-tasks-label">完了タスク</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="total-study-time">0</div>
-                <div class="stat-label">総勉強時間（分）</div>
+                <div class="stat-label" id="total-study-time-label">総勉強時間（分）</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="completion-rate">0%</div>
-                <div class="stat-label">完了率</div>
+                <div class="stat-label" id="completion-rate-label">完了率</div>
             </div>
         </div>
 
         <!-- Todo登録フォーム -->
         <div class="todo-form">
-            <h2>📝 新しい勉強タスクを追加</h2>
+            <h2 id="add-task-title">新しい勉強タスクを追加</h2>
             <div class="form-grid">
                 <div class="input-group">
-                    <label for="todo-title">タスク名</label>
+                    <label for="todo-title" id="task-name-label">タスク名</label>
                     <input type="text" id="todo-title" placeholder="例：Reactの基礎を学ぶ">
                 </div>
                 <div class="input-group">
-                    <label for="todo-subject">教科</label>
+                    <label for="todo-subject" id="subject-label">教科</label>
                     <select id="todo-subject">
                         <option value="webプログラミング">Webプログラミング</option>
                         <option value="アルゴリズム">アルゴリズム</option>
@@ -720,15 +721,15 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label for="todo-study-time">目標勉強時間（分）</label>
+                    <label for="todo-study-time" id="study-time-label">目標勉強時間（分）</label>
                     <input type="number" id="todo-study-time" placeholder="60" min="1">
                 </div>
                 <div class="input-group">
-                    <label for="todo-content">勉強内容</label>
+                    <label for="todo-content" id="content-label">勉強内容</label>
                     <input type="text" id="todo-content" placeholder="例：React Hooksの使い方">
                 </div>
                 <div class="input-group">
-                    <label for="todo-priority">優先度</label>
+                    <label for="todo-priority" id="priority-label">優先度</label>
                     <select id="todo-priority">
                         <option value="低">低</option>
                         <option value="中" selected>中</option>
@@ -736,21 +737,21 @@
                     </select>
                 </div>
                 <div class="input-group">
-                    <label for="todo-deadline">期限</label>
+                    <label for="todo-deadline" id="deadline-label">期限</label>
                     <input type="date" id="todo-deadline">
                 </div>
             </div>
-            <button class="btn btn-primary" onclick="addTodo()">タスクを追加</button>
+            <button class="btn btn-primary" onclick="addTodo()" id="add-task-btn">タスクを追加</button>
         </div>
 
         <!-- Todo一覧 -->
         <div class="todo-list">
-            <h2>📋 勉強タスク一覧</h2>
+            <h2 id="task-list-title">勉強タスク一覧</h2>
             <div class="filters">
-                <button class="filter-btn active" onclick="filterTodos('all')">すべて</button>
-                <button class="filter-btn" onclick="filterTodos('pending')">未完了</button>
-                <button class="filter-btn" onclick="filterTodos('completed')">完了</button>
-                <button class="filter-btn" onclick="filterTodos('high-priority')">高優先度</button>
+                <button class="filter-btn active" onclick="filterTodos('all')" id="filter-all-btn">すべて</button>
+                <button class="filter-btn" onclick="filterTodos('pending')" id="filter-pending-btn">未完了</button>
+                <button class="filter-btn" onclick="filterTodos('completed')" id="filter-completed-btn">完了</button>
+                <button class="filter-btn" onclick="filterTodos('high-priority')" id="filter-high-priority-btn">高優先度</button>
             </div>
             <div id="todo-container">
                 <!-- Todoアイテムがここに動的に追加されます -->
@@ -765,20 +766,202 @@
         let timer = null;
         let timerRunning = false;
         let totalSeconds = 0;
+        let currentLanguage = 'ja'; // 'ja' for Japanese, 'en' for English
         let sleepSettings = {
             bedtime: '23:00',
             wakeup: '07:00',
             targetSleep: 8
         };
 
+        // 言語設定
+        const translations = {
+            ja: {
+                appTitle: '勉強Todoアプリ',
+                languageSwitch: '言語切替',
+                themeSwitch: 'テーマ切替',
+                sleepManagement: '睡眠時間管理',
+                bedtime: '就寝時間',
+                wakeup: '起床時間',
+                targetSleep: '目標睡眠時間（時間）',
+                saveSleepSettings: '睡眠設定を保存',
+                sleepCountdown: '今日寝るまであと',
+                studyTimer: '今日の勉強時間',
+                startTimer: 'タイマー開始',
+                pauseTimer: '一時停止',
+                resetTimer: 'リセット',
+                totalTasks: '総タスク数',
+                completedTasks: '完了タスク',
+                totalStudyTime: '総勉強時間（分）',
+                completionRate: '完了率',
+                addNewTask: '新しい勉強タスクを追加',
+                taskName: 'タスク名',
+                subject: '教科',
+                studyTime: '目標勉強時間（分）',
+                content: '勉強内容',
+                priority: '優先度',
+                deadline: '期限',
+                addTask: 'タスクを追加',
+                taskList: '勉強タスク一覧',
+                all: 'すべて',
+                pending: '未完了',
+                completed: '完了',
+                highPriority: '高優先度',
+                noTasks: 'タスクがありません',
+                addNewTaskMessage: '新しい勉強タスクを追加してみましょう！',
+                incomplete: '未完了',
+                complete: '完了',
+                edit: '編集',
+                delete: '削除',
+                incompleteBack: '未完了に戻す',
+                studyContent: '勉強内容',
+                targetStudyTime: '目標勉強時間',
+                priorityLevel: '優先度',
+                deadlineDate: '期限',
+                createdDate: '作成日',
+                completedDate: '完了日',
+                notSet: '未設定',
+                low: '低',
+                medium: '中',
+                high: '高',
+                pleaseEnterTaskName: 'タスク名を入力してください',
+                confirmDelete: 'このタスクを削除しますか？',
+                sleepSettingsSaved: '睡眠設定を保存しました！',
+                updateTask: 'タスクを更新'
+            },
+            en: {
+                appTitle: 'Study Todo App',
+                languageSwitch: 'Language',
+                themeSwitch: 'Theme',
+                sleepManagement: 'Sleep Time Management',
+                bedtime: 'Bedtime',
+                wakeup: 'Wake-up Time',
+                targetSleep: 'Target Sleep Hours',
+                saveSleepSettings: 'Save Sleep Settings',
+                sleepCountdown: 'Time until bedtime',
+                studyTimer: 'Today\'s Study Time',
+                startTimer: 'Start Timer',
+                pauseTimer: 'Pause',
+                resetTimer: 'Reset',
+                totalTasks: 'Total Tasks',
+                completedTasks: 'Completed Tasks',
+                totalStudyTime: 'Total Study Time (min)',
+                completionRate: 'Completion Rate',
+                addNewTask: 'Add New Study Task',
+                taskName: 'Task Name',
+                subject: 'Subject',
+                studyTime: 'Target Study Time (min)',
+                content: 'Study Content',
+                priority: 'Priority',
+                deadline: 'Deadline',
+                addTask: 'Add Task',
+                taskList: 'Study Task List',
+                all: 'All',
+                pending: 'Pending',
+                completed: 'Completed',
+                highPriority: 'High Priority',
+                noTasks: 'No tasks available',
+                addNewTaskMessage: 'Try adding a new study task!',
+                incomplete: 'Incomplete',
+                complete: 'Complete',
+                edit: 'Edit',
+                delete: 'Delete',
+                incompleteBack: 'Mark Incomplete',
+                studyContent: 'Study Content',
+                targetStudyTime: 'Target Study Time',
+                priorityLevel: 'Priority',
+                deadlineDate: 'Deadline',
+                createdDate: 'Created Date',
+                completedDate: 'Completed Date',
+                notSet: 'Not Set',
+                low: 'Low',
+                medium: 'Medium',
+                high: 'High',
+                pleaseEnterTaskName: 'Please enter a task name',
+                confirmDelete: 'Are you sure you want to delete this task?',
+                sleepSettingsSaved: 'Sleep settings saved!',
+                updateTask: 'Update Task'
+            }
+        };
+
         // 初期化
         document.addEventListener('DOMContentLoaded', function() {
+            loadLanguage();
             loadTodos();
             loadSleepSettings();
             updateStats();
             updateCountdown();
             setInterval(updateCountdown, 1000);
         });
+
+        // 言語切り替え
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'ja' ? 'en' : 'ja';
+            localStorage.setItem('language', currentLanguage);
+            updateLanguage();
+        }
+
+        // 言語設定の読み込み
+        function loadLanguage() {
+            const saved = localStorage.getItem('language');
+            if (saved) {
+                currentLanguage = saved;
+            }
+            updateLanguage();
+        }
+
+        // 言語更新
+        function updateLanguage() {
+            const t = translations[currentLanguage];
+            
+            // アプリタイトル
+            document.getElementById('app-title').textContent = t.appTitle;
+            document.getElementById('language-icon').textContent = currentLanguage === 'ja' ? 'EN' : 'JA';
+            
+            // 睡眠管理
+            document.getElementById('sleep-management-title').textContent = t.sleepManagement;
+            document.getElementById('bedtime-label').textContent = t.bedtime;
+            document.getElementById('wakeup-label').textContent = t.wakeup;
+            document.getElementById('target-sleep-label').textContent = t.targetSleep;
+            document.getElementById('save-sleep-btn').textContent = t.saveSleepSettings;
+            
+            // タイマー
+            document.getElementById('sleep-countdown-title').textContent = t.sleepCountdown;
+            document.getElementById('study-timer-title').textContent = t.studyTimer;
+            document.getElementById('start-timer-btn').textContent = t.startTimer;
+            document.getElementById('pause-timer-btn').textContent = t.pauseTimer;
+            document.getElementById('reset-timer-btn').textContent = t.resetTimer;
+            
+            // 統計
+            document.getElementById('total-tasks-label').textContent = t.totalTasks;
+            document.getElementById('completed-tasks-label').textContent = t.completedTasks;
+            document.getElementById('total-study-time-label').textContent = t.totalStudyTime;
+            document.getElementById('completion-rate-label').textContent = t.completionRate;
+            
+            // タスク追加
+            document.getElementById('add-task-title').textContent = t.addNewTask;
+            document.getElementById('task-name-label').textContent = t.taskName;
+            document.getElementById('subject-label').textContent = t.subject;
+            document.getElementById('study-time-label').textContent = t.studyTime;
+            document.getElementById('content-label').textContent = t.content;
+            document.getElementById('priority-label').textContent = t.priority;
+            document.getElementById('deadline-label').textContent = t.deadline;
+            document.getElementById('add-task-btn').textContent = t.addTask;
+            
+            // タスク一覧
+            document.getElementById('task-list-title').textContent = t.taskList;
+            document.getElementById('filter-all-btn').textContent = t.all;
+            document.getElementById('filter-pending-btn').textContent = t.pending;
+            document.getElementById('filter-completed-btn').textContent = t.completed;
+            document.getElementById('filter-high-priority-btn').textContent = t.highPriority;
+            
+            // 優先度オプションの更新
+            const prioritySelect = document.getElementById('todo-priority');
+            prioritySelect.innerHTML = `
+                <option value="低">${t.low}</option>
+                <option value="中" selected>${t.medium}</option>
+                <option value="高">${t.high}</option>
+            `;
+        }
 
         // テーマ切り替え
         function toggleTheme() {
@@ -787,11 +970,11 @@
             
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
-                themeIcon.textContent = '🌙';
+                themeIcon.textContent = 'DARK';
                 localStorage.setItem('theme', 'light');
             } else {
                 body.setAttribute('data-theme', 'dark');
-                themeIcon.textContent = '☀️';
+                themeIcon.textContent = 'LIGHT';
                 localStorage.setItem('theme', 'dark');
             }
         }
@@ -804,7 +987,7 @@
                 targetSleep: parseFloat(document.getElementById('target-sleep').value)
             };
             localStorage.setItem('sleepSettings', JSON.stringify(sleepSettings));
-            alert('睡眠設定を保存しました！');
+            alert(translations[currentLanguage].sleepSettingsSaved);
         }
 
         // 睡眠設定の読み込み
@@ -881,7 +1064,7 @@
             const deadline = document.getElementById('todo-deadline').value;
 
             if (!title) {
-                alert('タスク名を入力してください');
+                alert(translations[currentLanguage].pleaseEnterTaskName);
                 return;
             }
 
@@ -916,13 +1099,13 @@
             document.getElementById('todo-title').value = '';
             document.getElementById('todo-study-time').value = '';
             document.getElementById('todo-content').value = '';
-            document.getElementById('todo-priority').value = '中';
+            document.getElementById('todo-priority').value = currentLanguage === 'ja' ? '中' : 'Medium';
             document.getElementById('todo-deadline').value = '';
         }
 
         // Todo削除
         function deleteTodo(id) {
-            if (confirm('このタスクを削除しますか？')) {
+            if (confirm(translations[currentLanguage].confirmDelete)) {
                 todos = todos.filter(todo => todo.id !== id);
                 saveTodos();
                 renderTodos();
@@ -958,7 +1141,7 @@
                 
                 // 編集モードでフォームを更新
                 const addButton = document.querySelector('.todo-form .btn');
-                addButton.textContent = 'タスクを更新';
+                addButton.textContent = translations[currentLanguage].updateTask;
                 addButton.onclick = () => updateTodo(id);
             }
         }
@@ -975,7 +1158,7 @@
                 todo.deadline = document.getElementById('todo-deadline').value;
 
                 if (!todo.title) {
-                    alert('タスク名を入力してください');
+                    alert(translations[currentLanguage].pleaseEnterTaskName);
                     return;
                 }
 
@@ -986,7 +1169,7 @@
 
                 // ボタンを元に戻す
                 const addButton = document.querySelector('.todo-form .btn');
-                addButton.textContent = 'タスクを追加';
+                addButton.textContent = translations[currentLanguage].addTask;
                 addButton.onclick = addTodo;
             }
         }
@@ -1022,11 +1205,11 @@
                     break;
             }
 
-            if (filteredTodos.length === 0) {
+                        if (filteredTodos.length === 0) {
                 container.innerHTML = `
                     <div class="empty-state">
-                        <h3>📝 タスクがありません</h3>
-                        <p>新しい勉強タスクを追加してみましょう！</p>
+                        <h3>${translations[currentLanguage].noTasks}</h3>
+                        <p>${translations[currentLanguage].addNewTaskMessage}</p>
                     </div>
                 `;
                 return;
@@ -1038,10 +1221,10 @@
                         <div class="todo-title">${todo.title}</div>
                         <div class="todo-actions">
                             <button class="btn btn-${todo.completed ? 'secondary' : 'success'}" onclick="toggleTodo(${todo.id})">
-                                ${todo.completed ? '🔄 未完了に戻す' : '✅ 完了'}
+                                ${todo.completed ? translations[currentLanguage].incompleteBack : translations[currentLanguage].complete}
                             </button>
-                            <button class="btn btn-primary" onclick="editTodo(${todo.id})">✏️ 編集</button>
-                            <button class="btn btn-danger" onclick="deleteTodo(${todo.id})">🗑️ 削除</button>
+                            <button class="btn btn-primary" onclick="editTodo(${todo.id})">${translations[currentLanguage].edit}</button>
+                            <button class="btn btn-danger" onclick="deleteTodo(${todo.id})">${translations[currentLanguage].delete}</button>
                         </div>
                     </div>
                     
@@ -1049,40 +1232,40 @@
                     
                     <div class="todo-details">
                         <div class="detail-item">
-                            <div class="detail-label">勉強内容</div>
-                            <div class="detail-value">${todo.content || '未設定'}</div>
+                            <div class="detail-label">${translations[currentLanguage].studyContent}</div>
+                            <div class="detail-value">${todo.content || translations[currentLanguage].notSet}</div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">目標勉強時間</div>
-                            <div class="detail-value">${todo.studyTime}分</div>
+                            <div class="detail-label">${translations[currentLanguage].targetStudyTime}</div>
+                            <div class="detail-value">${todo.studyTime}${currentLanguage === 'ja' ? '分' : ' min'}</div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">優先度</div>
+                            <div class="detail-label">${translations[currentLanguage].priorityLevel}</div>
                             <div class="detail-value">
-                                <span style="color: ${todo.priority === '高' ? '#e74c3c' : todo.priority === '中' ? '#f39c12' : '#27ae60'}">
+                                <span style="color: ${todo.priority === '高' ? '#ff0000' : todo.priority === '中' ? '#000000' : '#000000'}">
                                     ${todo.priority}
                                 </span>
                             </div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">期限</div>
-                            <div class="detail-value">${todo.deadline || '未設定'}</div>
+                            <div class="detail-label">${translations[currentLanguage].deadlineDate}</div>
+                            <div class="detail-value">${todo.deadline || translations[currentLanguage].notSet}</div>
                         </div>
                         <div class="detail-item">
-                            <div class="detail-label">作成日</div>
-                            <div class="detail-value">${new Date(todo.createdAt).toLocaleDateString('ja-JP')}</div>
+                            <div class="detail-label">${translations[currentLanguage].createdDate}</div>
+                            <div class="detail-value">${new Date(todo.createdAt).toLocaleDateString(currentLanguage === 'ja' ? 'ja-JP' : 'en-US')}</div>
                         </div>
                         ${todo.completed ? `
                         <div class="detail-item">
-                            <div class="detail-label">完了日</div>
-                            <div class="detail-value">${new Date(todo.completedAt).toLocaleDateString('ja-JP')}</div>
+                            <div class="detail-label">${translations[currentLanguage].completedDate}</div>
+                            <div class="detail-value">${new Date(todo.completedAt).toLocaleDateString(currentLanguage === 'ja' ? 'ja-JP' : 'en-US')}</div>
                         </div>
                         ` : ''}
                     </div>
                     
                     <div class="todo-status">
                         <span class="status-badge ${todo.completed ? 'status-completed' : 'status-pending'}">
-                            ${todo.completed ? '完了' : '未完了'}
+                            ${todo.completed ? translations[currentLanguage].completed : translations[currentLanguage].incomplete}
                         </span>
                         ${todo.completed ? `
                         <div class="progress-bar">
@@ -1129,7 +1312,7 @@
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             document.body.setAttribute('data-theme', 'dark');
-            document.getElementById('theme-icon').textContent = '☀️';
+            document.getElementById('theme-icon').textContent = 'LIGHT';
         }
 
         // キーボードショートカット
@@ -1149,38 +1332,6 @@
                 }
             }
         });
-
-        // ドラッグ&ドロップ機能（将来の拡張用）
-        function enableDragAndDrop() {
-            const todoContainer = document.getElementById('todo-container');
-            let draggedElement = null;
-
-            todoContainer.addEventListener('dragstart', function(e) {
-                draggedElement = e.target;
-                e.target.style.opacity = '0.5';
-            });
-
-            todoContainer.addEventListener('dragend', function(e) {
-                e.target.style.opacity = '1';
-            });
-
-            todoContainer.addEventListener('dragover', function(e) {
-                e.preventDefault();
-            });
-
-            todoContainer.addEventListener('drop', function(e) {
-                e.preventDefault();
-                if (draggedElement) {
-                    const targetElement = e.target.closest('.todo-item');
-                    if (targetElement && targetElement !== draggedElement) {
-                        // タスクの順序を変更するロジックをここに実装
-                    }
-                }
-            });
-        }
-
-        // 初期化時にドラッグ&ドロップを有効化
-        // enableDragAndDrop();
     </script>
 </body>
-</html>
+</html> 
